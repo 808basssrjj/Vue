@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="切换显示状态" @click='change'>
+        <p v-if='isShow'>黑马</p>
+        <p v-if='temerature>=35'>热死了</p>
+    </div>
+
+    <script>
+        //v-if 切换元素的显示与隐藏 操作dom元素
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isShow: true,
+                temerature: 20
+            },
+            methods: {
+                change: function () {
+                    this.isShow = !this.isShow
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

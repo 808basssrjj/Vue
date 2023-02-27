@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>a</button>
+    <button>a</button>
+    <button>a</button>
+    <button>a</button>
+
+    <script>
+        // let a;
+        // let b, c, d;
+        // let e = 100;
+        // let f = 521, g = "ES6", h = [];
+
+        //1. 变量不能重复声明  var可以
+        // let star = "h"
+        // let star = 'b'
+
+        //2. 块级作用域  全局,函数,eavl
+        // {
+        //     let atm = '迪迦'
+        // }
+        // console.log(atm);
+
+        //没有块级引起的问题 
+        // var btns = document.getElementsByTagName('button');
+        // for (var i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener('click', function () {
+        //         console.log("第" + i + '个被点击');
+        //     })
+        // }
+        const btns = document.getElementsByTagName('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                console.log("第" + i + '个被点击');
+            })
+        }
+
+        //3. 不存在变量提升
+        // console.log(a); 
+        // var a ='泰罗'  //undefind
+        // let a = '泰罗' //错误
+
+        //4. 不影响作用域链
+        {
+            let b = '赛文'
+            function fn() {
+                console.log(b);
+            }
+            fn()
+        }
+
+
+    </script>
+</body>
+
+</html>

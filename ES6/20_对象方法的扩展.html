@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. Object.is  两个值是否相等
+        console.log(Object.is(NaN.NaN));
+
+        //2. Object.assign  对象的合并
+        const Obj1 = {
+            name: 'obj1'
+        }
+        const Obj2 = {
+            name: 'obj2',
+            age: 19
+        }
+        console.log(Object.assign(Obj1, Obj2));
+
+        //3. Object.setPrototypeOf  设置原型
+
+
+        const school = {
+            name: 'aa',
+            cities: ['a', 'b', 'c', 'd'],
+            xunke: ['1', '2', '3']
+        }
+        //4. Object.keys   获取所有对象的键
+        console.log(Object.keys(school));
+
+        //5. Object.values 获取所有对象的值
+        console.log(Object.values(school));
+
+        //6. Object.entries 变为二维数组
+        console.log(Object.entries(school));
+
+
+
+    </script>
+</body>
+
+</html>

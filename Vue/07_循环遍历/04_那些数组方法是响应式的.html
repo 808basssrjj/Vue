@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <script src="../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in letter">{{item}}</li>
+    </ul>
+    <button @click="btnClick">按钮</button>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        letter: ["a", "b", "c", "d"],
+      },
+      methods: {
+        btnClick() {
+          //1.push()
+          // this.letter.push("aaa", "bbb", "ccc");
+
+          //2.pop() 删除数组最后一个元素
+          // this.letter.pop();
+
+          //3.shift() 删除数组第一个元素
+          // this.letter.shift();
+
+          //4.unshift() 在数组最前面添加元素
+          // this.letter.unshift('aa','bb','cc');
+
+          //5.splice(strat) 删除元素/插入元素/替换元素
+          //5.1删除是第二个参数是要删几个 不传删除所有
+          // this.letter.splice(1, 1);
+          //5.2替换 第二个参数是要替换几个   后面是要替换的元素
+          // this.letter.splice(1, 3, "m", "n", "l");
+          //5.3插入 第二个参数0
+          // this.letter.splice(1, 0, "x", "y");
+
+          //6.sort() 排序
+
+          //7.reverse()  翻转数组
+          //this.letter[0]='bbb'
+          //this.letter.splice(0,1,'bbb')
+          Vue.set(this.letter, 0, "bbb");
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

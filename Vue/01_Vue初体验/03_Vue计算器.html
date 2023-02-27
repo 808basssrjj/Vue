@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>当前为:{{counter}}</h2>
+        <button v-on:click="add">+</button>
+        <button @click="sub">-</button>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                counter: 0
+            },
+            methods: {
+                add: function () {
+                    this.counter++;
+                    console.log('add被点击了');
+                },
+                sub: function () {
+                    this.counter--;
+                    console.log('sub被点击了');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

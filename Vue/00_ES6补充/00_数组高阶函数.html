@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组高阶函数 filter/map/reduce
+        const nums = [10, 20, 111, 222, 400, 40, 50];
+        // 1.filter中的回调函数,必须返回一个布尔值
+        // true时函数内部会自动将这次的n加入新的数组
+        // false时会自动过滤
+        let newNums = nums.filter(function (n) {
+            return n < 100 //返回小于100
+        })
+        console.log(newNums);
+
+        // 2.map 按照原始数组元素顺序依次处理元素。
+        newNums2 = newNums.map(function (n) {
+            return n * 2 //每个数乘2
+        })
+        console.log(newNums2);
+
+        //3.reduce对数组中所有内容进行汇总 preValue前一次返回值  n当前被处理元素
+        newNums3 = newNums2.reduce(function (preValue, n) {
+            return preValue + n
+        }, 0)
+        console.log(newNums3);
+        //第一次 preValue: 0    n: 20   return :20
+        //第二次 preValue: 20   n: 40   return :60
+        //第二次 preValue: 60   n: 80   return :140
+        //第二次 preValue: 140  n: 100  return :240
+
+
+        let total = nums.filter(function (n) {
+            return n < 100
+        }).map(function (n) {
+            return n * 2
+        }).reduce(function (preValue, n) {
+            return preValue + n
+        }, 0)
+        console.log(total);
+
+        let total2 = nums.filter(n => n < 100).map(n => n * 2).reduce((preValue, n) => preValue + n)
+        console.log(total2);
+
+
+    </script>
+</body>
+
+</html>

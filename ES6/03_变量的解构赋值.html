@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. 数组
+        const F4 = ['a', 'b', 'c', 'd']
+        let [xiao, liu, zhao, song] = F4
+        console.log(xiao);
+        console.log(liu);
+        console.log(zhao);
+        console.log(song);
+
+        //2. 对象
+        const person = {
+            name: '赛文',
+            age: '不祥',
+            jiguan: function () {
+                console.log('放激光');
+            }
+        }
+        let { name, age, jiguan } = person
+        console.log(name);
+        console.log(age);
+        console.log(jiguan);
+        jiguan()
+
+        // let{jiguan} = person
+        // jiguan()
+
+    </script>
+</body>
+
+</html>

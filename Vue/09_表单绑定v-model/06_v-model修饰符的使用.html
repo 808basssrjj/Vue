@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.lazy  change事件之后_进行同步：-->
+        <input type="text" v-model.lazy="message">
+        <h2>{{message}}</h2>
+
+        <!-- 2.number 输入值转为数值类型-->
+        <input type="number" v-model.number="age">
+        <h2>{{typeof(age)}}</h2>
+
+        <!-- 3.trim 自动过滤用户输入的首尾空白字符 -->
+        <input v-model.trim="msg">
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                message: '你好',
+                age: '',
+                msg: ''
+            }
+        })
+    </script>
+</body>
+
+</html>

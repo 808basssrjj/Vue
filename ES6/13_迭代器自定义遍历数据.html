@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const banji = {
+            name: '一班',
+            stus: [
+                '赛文',
+                '赛迦',
+                '赛罗'
+            ],
+            [Symbol.iterator]() {
+                let index = 0;
+                let _this = this
+                return {
+                    next() {
+                        if (index < _this.stus.length) {
+                            const res = { value: _this.stus[index], done: false }
+                            index++
+                            return res
+                        } else {
+                            return { value: undefined, done: true }
+                        }
+                    }
+                };
+            }
+        }
+
+        for (let v of banji) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

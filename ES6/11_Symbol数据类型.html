@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //创建
+        let s = Symbol()
+        console.log(s, typeof s);
+        let s2 = Symbol('描述')
+        let s3 = Symbol('描述')
+        console.log(s2 === s3); //false
+
+        let s4 = Symbol.for('描述')
+        let s5 = Symbol.for('描述')
+        console.log(s4 === s5); //true
+
+        //不能与其他数据运算
+        // let res = s + 100
+        // let res = s > 100
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="切换显示状态" @click='changeIsShow'>
+        <input type="button" value="增加年龄" @click='ageAdd'>
+        <img v-show='isShow' src="../images/age.jpg" alt="">
+        <img v-show='age>=18' src="../images/age.jpg" alt="">
+    </div>
+
+    <script>
+        //v-show  切换元素的display
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isShow: false,
+                age: 17
+            },
+            methods: {
+                changeIsShow: function () {
+                    this.isShow = !this.isShow
+                },
+                ageAdd: function () {
+                    this.age++
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

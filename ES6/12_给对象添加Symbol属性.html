@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //向对象添加方法 up, down
+        let game = {}
+
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+
+        game[methods.up] = function () {
+            console.log('up');
+        }
+        game[methods.down] = function () {
+            console.log('down');
+        }
+        console.log(game);
+
+
+        let youxi = {
+            name: 'sanguosha',
+            [Symbol('sha')]: function () {
+                console.log('杀');
+            },
+            [Symbol('shan')]: function () {
+                console.log('闪');
+            }
+        }
+        console.log(youxi);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="点击" @click="doIt(666,' 老铁')">
+        <input type="text" @keyup.enter="sayHi">
+
+    </div>
+
+    <script>
+        //.stop阻止事件冒泡 .preve阻止默认事件 .self绑定自身 .once只触发一次
+        var vm = new Vue({
+            el: '#app',
+            methods: {
+                doIt: function (p1, p2) {
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayHi: function () {
+                    alert('吃了没');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

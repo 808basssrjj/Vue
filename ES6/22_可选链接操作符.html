@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function main(config) {
+            // const dbhost = config && config.db && config.db.host
+            const dbhost = config?.db?.host
+            console.log(dbhost);
+        }
+        main({
+            db: {
+                host: '192.168.1.100',
+                username: 'aa'
+            },
+            cache: {
+                host: '192.168.1.1=200',
+                username: 'bb'
+            }
+        })
+
+        function remake_price(num, to_fixed, unit) {
+            if (isNaN(num)) {
+                return ''
+            }
+            if (num == 0) {
+                return ''
+            }
+            if (num < 0) {
+                return '-' + unit + Math.abs(num).toFixed(to_fixed)
+            }
+            var price = num.toString().split('.');
+            if (price[1]?.length >= 3) {
+                console.log(1);
+            }
+
+            if (price[1] && price[1].length >= 3) {
+                console.log(2);
+            }
+
+            if (price[1]) {
+                if (price[1].length >= 3) {
+                    return unit + Number(num).toFixed(3)
+                }
+            }
+            return unit + Number(num).toFixed(to_fixed)
+        }
+
+        console.log(remake_price(11, 2, "$"));
+        console.log(remake_price(1.2, 2, "$"));
+        console.log(remake_price(1.23, 2, "$"));
+        console.log(remake_price(1.234, 2, "$"));
+        console.log(remake_price(1.2345, 2, "$"));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        // 把数组转成参数
+        const aoteman = ['迪迦', '艾斯', '贝利亚']
+        function fn() {
+            console.log(arguments);
+        }
+        fn(...aoteman)  //等于fn('迪迦', '艾斯', '贝利亚')
+
+
+        //1. 数组的合并
+        const AA = ['a', 'b', 'c']
+        const BB = ['d', 'e']
+        // const hebin = AA.concat(BB)
+        const hebin = [...AA, ...BB]
+        console.log(hebin);
+
+        //2. 数组和克隆
+        const sanzhihua = ['E', 'G', 'M']
+        const copy = [...sanzhihua]
+        console.log(copy);
+
+        //3. 将伪数组转为真正的数组
+        const divs = document.querySelectorAll('div')
+        const divArr = [...divs]
+        console.log(divArr);
+    </script>
+</body>
+
+</html>

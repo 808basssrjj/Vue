@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="btn1Click">按钮1</button>
+        <button @click="btn2Click">按钮2</button>
+        <button @click="btn3Click('abc',$event)">按钮3</button>
+        <button @click="btn4Click">按钮4</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'hh'
+            },
+            methods: {
+                btn1Click() {
+                    console.log('aa');
+                },
+                //默认将浏览器生成的event对象作为参数传到函数
+                btn2Click(event) {
+                    console.log(event);
+                },
+                //手动传event对象用 $event
+                btn3Click(abc, event) {
+                    console.log(abc, event);
+                },
+                btn4Click() {
+                    console.log('aa');
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

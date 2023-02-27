@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 作用: 父组件要替换插槽的内容,但内容由子组件提供 -->
+
+    <div id="app">
+
+        <cpn></cpn>
+
+        <cpn>
+            <!-- 获取子组件的 planguages -->
+            <template slot-scope="slotProp">
+                <span v-for="item in slotProp.data">{{item}}--</span>
+            </template>
+        </cpn>
+
+        <cpn>
+            <!-- 2.6版本以后 -->
+            <template v-slot:default="slotProp">
+                <span v-for="item in slotProp.data">{{item}}**</span>
+            </template>
+        </cpn>
+
+    </div>
+
+
+    <template id='cpn'>
+        <div>
+            <!-- 绑定在 <slot> 元素上的 attribute(data) 被称为插槽 prop -->
+            <slot :data='planguages'>
+                <ul>
+                    <li v-for="item in planguages">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            planguages: ['Python', 'JavaScript', 'PHP', 'C++', 'Vue', 'Java']
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

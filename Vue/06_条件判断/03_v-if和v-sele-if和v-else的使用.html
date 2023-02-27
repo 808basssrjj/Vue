@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-if="source>90">优秀</h2>
+        <h2 v-else-if="source>=80">良好</h2>
+        <h2 v-else-if="source>=60">及格</h2>
+        <h2 v-else></h2>
+
+        <h1>{{result}}</h1>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                source: 99
+            },
+            computed: {
+                result() {
+                    let showSource = '';
+                    if (this.source >= 90) {
+                        showSource = '优秀';
+                    } else if (this.source >= 80) {
+                        showSource = '良好';
+
+                    }
+                    return showSource;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

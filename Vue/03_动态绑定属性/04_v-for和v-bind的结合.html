@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in movies" :class="{'red':cuerys==index}" @click="change(index)">{{index}} -- {{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                cuerys: 0,
+                movies: ['海王', '信条', '盗梦空间', '进击的巨人'],
+            },
+            methods: {
+                change: function (index) {
+                    this.cuerys = index;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

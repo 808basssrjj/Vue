@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const obj = new Object();
+
+        // {} 字面量
+        // const obj = {
+        //     name: 'aa',
+        //     age: 18,
+        //     run: function () {
+        //         console.log('奔跑');
+        //     }
+        // }
+
+
+        //1.属性的增强写法
+        const name = "why";
+        const age = 18;
+
+        //ES5写法
+        // const obj = {
+        //     name: name,
+        //     age: age
+        // }
+        //ES6写法
+        const obj = {
+            name,
+            age
+        }
+
+        console.log(obj);
+
+        //2.函数的增强写法
+        //ES5写法
+        // const obj = {
+        //     run: function () {
+
+        //     },
+        //     eat: function () {
+
+        //     }
+        // }
+        //ES6写法
+        const obj = {
+            run() {
+
+            },
+            eat() {
+
+            }
+        }
+    </script>
+</body>
+
+</html>

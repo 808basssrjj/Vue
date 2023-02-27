@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 都否都完成请求
+        Promise.all([
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('res1')
+                }, 1000)
+            }),
+
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('res2')
+                }, 2000)
+            })
+        ]).then((res)=>{
+            console.log(res);
+        })
+
+
+    </script>
+</body>
+
+</html>

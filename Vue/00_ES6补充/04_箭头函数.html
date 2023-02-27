@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 
+        const aaa = function () { }
+        //2.对象字面量中定义函数
+        const obj = {
+            bbb: function () { },
+            ccc() { }
+        }
+        // 3.箭头函数
+        const ddd = () => {
+
+        }
+
+
+        //参数问题 (写在小括号中 一个参数可省略小括号)
+        const power = num => {
+            return num * num
+        }
+
+        // 代码块中只有一行代码时,可省略大括号和return
+        const mul = (num1, num2) => num1 * num2
+        console.log(mul(2, 3));
+
+        //箭头函数中的this引用的是最近作用域
+        //向外层作用域中,一层层查找,直到有this的定义
+        setTimeout(function () {
+            console.log(this); //window
+        }, 1000)
+        setTimeout(() => {
+            console.log(this); //window
+        }, 1000)
+
+        const objj = {
+            aaa() {
+                setTimeout(function () {
+                    console.log(this); //window
+                }, 1000)
+                setTimeout(() => {
+                    console.log(this); //objj
+                }, 1000)
+            }
+        }
+        objj.aaa()
+    </script>
+</body>
+
+</html>

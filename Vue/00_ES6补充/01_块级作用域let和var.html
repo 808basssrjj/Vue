@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>a</button>
+    <button>a</button>
+    <button>a</button>
+    <button>a</button>
+    <script>
+        //1.变量作用域
+        // {
+        //     var name = 'why';
+        //     console.log(name);
+        // }
+        // console.log(name);
+
+        //没有块级引起的问题 
+        // var btns = document.getElementsByTagName('button');
+        // for (var i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener('click', function () {
+        //         console.log("第" + i + '个被点击');
+        //     })
+        // }
+
+        const btns = document.getElementsByTagName('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                console.log("第" + i + '个被点击');
+            })
+        }
+    </script>
+</body>
+
+</html>

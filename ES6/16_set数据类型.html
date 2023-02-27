@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let s = new Set();
+        let s2 = new Set(['a', 'b', 'c']);
+
+
+        //1. 元素个数size
+        console.log(s2.size);
+        //2. 添加元素add
+        s2.add('d')
+        //3. 删除元素delete
+        s2.delete('a')
+        //4. 清空clear
+        s2.clear()
+
+        console.log(s2)
+
+        //数组去重
+        let arr = [1, 2, 3, 4, 5, 6, 1, 2, 2, 3]
+        let res = [...new Set(arr)]
+        console.log(res);
+        //交集
+        let arr2 = [4, 5, 5, 8, 9]
+        let res2 = [...new Set(arr)].filter(item => new Set(arr2).has(item))
+        console.log(res2);
+        //并集
+        let res3 = [...new Set([...arr, ...arr2])]
+        console.log(res3);
+        //差集
+        let res4 = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)))
+        console.log(res4);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='js/vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='showInfo'>1</button>
+        <button @click='showText'>2</button>
+        <p>{{name}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'Hello Vue!'
+            },
+            methods: {
+                showInfo: function () {
+                    this.name = '单击1得到的结果'
+                },
+                showText() {
+                    this.name = '单击2得到的结果'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

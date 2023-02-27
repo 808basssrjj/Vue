@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="ad" style="width:200px;height:200px;background:pink"></div>
+    <script>
+        let ad = document.getElementById('ad')
+        // ad.addEventListener('click', function () {
+        //     let _this = this
+        //     setTimeout(function () {
+        //         _this.style.background = 'red'
+        //     },2000)
+        // })
+
+        ad.addEventListener('click', function () {
+            setTimeout(() => {
+                this.style.background = 'red'
+            }, 2000)
+        })
+
+        //箭头函数适合与 this无关的问题,  定时器,数组的方法回调
+        //不适合与 this有关的问题  事件问题,对象的方法
+    </script>
+</body>
+
+</html>

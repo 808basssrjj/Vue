@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-if会适当地被销毁和重建。 -->
+        <!-- v-show只是简单地基于 CSS 进行切换。 -->
+        <!-- 切换频繁时v-show  一次切换时v-if -->
+        <h2 v-if="isShow" id="aa">{{message}}</h2>
+        <h2 v-show="isShow" id="bb">{{message}}</h2>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'hh',
+                isShow: false
+            }
+        })
+    </script>
+</body>
+
+</html>

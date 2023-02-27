@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='js/vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>总价格为{{totalPrice}}</p>
+        <p>单价为{{price}}</p>
+        <p>数量为{{num}}</p>
+        <button @click='add'>增加数量</button>
+        <button @click='plus'>减少数量</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                price: 20,
+                num: 0
+            },
+            methods: {
+                plus: function () {
+                    this.num == 0 ? 0 : this.num--;
+                },
+                add() {
+                    this.num += 1;
+                }
+            },
+            //computer 计算属性
+            computed: {
+                totalPrice: function () {
+                    return this.num * this.price;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

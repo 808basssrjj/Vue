@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        #app {
+            position: relative;
+        }
+
+        .left {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+        }
+
+        .right {
+            position: absolute;
+            top: 50%;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <img :src="imgArr[index]" alt="">
+        <a href="#" @click="prve" v-show='index!=0'>
+            <img src="../images/arrow-prev.png" alt="" class='right'>
+        </a>
+        <a href="#" @click="next" v-show='index<imgArr.length-1'>
+            <img src="../images/arrow-next.png" alt="" class='left'>
+        </a>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                imgArr: [
+                    "../images/1.jpg",
+                    "../images/2.jpg",
+                    "../images/3.jpg",
+                    "../images/4.jpg"
+                ],
+                index: 0
+            },
+            methods: {
+                prve: function () {
+                    this.index--;
+                },
+                next: function () {
+                    this.index++;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

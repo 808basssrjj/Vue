@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <cpn>
+            <span>哈哈</span>
+            <span slot='center'>标题</span>
+
+            <!-- 2.6以后 用v-slot 语法糖: #  需添加在<template>上-->
+            <template v-slot:right> 
+                <span>标题2</span>
+            </template>
+
+            <template #left>
+                <span>标题3</span>
+            </template>
+
+        </cpn>
+    </div>
+
+    <template id='cpn'>
+        <div>
+            <slot name='left'><span>左边</span></slot>
+            <slot name='center'><span>中间</span></slot>
+            <slot name='right'><span>右边</span></slot>
+            <!-- 一个不带 name 的 <slot> 出口会带有隐含的名字“default”。 -->
+            <slot></slot>
+        </div>
+    </template>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            components: {
+                cpn: {
+                    template: '#cpn'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <img v-bind:src='imgSrc' alt="">
+        <br>
+        <img :src="imgSrc" :title='imgTitle' alt="">
+    </div>
+
+    <script>
+        //v-bind:属性名  设置元素属性
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                imgSrc: "../ images / age.jpg",
+                imgTitle: '黑马程序员'
+            }
+        })
+    </script>
+</body>
+
+</html>

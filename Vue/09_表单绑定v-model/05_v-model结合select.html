@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.单选 绑定字符串-->
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <h2>Selected: {{ selected }}</h2>
+        <hr>
+
+        <!-- 2.多选 绑定数组 -->
+        <select v-model="fruits" multiple>
+            <option disabled value="">请选择</option>
+            <option>苹果</option>
+            <option>香蕉</option>
+            <option>西瓜</option>
+        </select>
+        <h2>水果: {{ fruits }}</h2>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                selected: '',
+                fruits: []
+            }
+        })
+    </script>
+</body>
+
+</html>
